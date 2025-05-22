@@ -5,8 +5,8 @@
 
 
 class Phone:
-    IMEI = None             # 序列号
-    producer = "ITCAST"     # 厂商
+    IMEI = None  # 序列号
+    producer = "ITCAST"  # 厂商
 
     def call_by_5g(self):
         print("使用5g网络进行通话")
@@ -14,21 +14,20 @@ class Phone:
 
 # 定义子类，复写父类成员
 class MyPhone(Phone):
-    producer = "ITHEIMA"        # 复写父类的成员属性
+    producer = "ITHEIMA"  # 复写父类的成员属性
 
     def call_by_5g(self):
         print("开启CPU单核模式，确保通话的时候省电")
-        # 方式1
-        # print(f"父类的厂商是：{Phone.producer}")
-        # Phone.call_by_5g(self)
-        # 方式2
+        # 方式1：直接调用父类的成员和方法
+        print(f"父类的厂商是：{Phone.producer}")
+        Phone.call_by_5g(self)
+        # 方式2：使用super()调用父类的成员和方法
         print(f"父类的厂商是：{super().producer}")
         super().call_by_5g()
         print("关闭CPU单核模式，确保性能")
 
+
 phone = MyPhone()
 phone.call_by_5g()
 print(phone.producer)
-
-# 在子类中，调用父类成员
-
+print(Phone.producer)  # 直接访问父类的成员
