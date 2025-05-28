@@ -7,10 +7,11 @@
 4. 进行数据需求的逻辑计算（计算每一天的销售额）
 5. 通过PyEcharts进行图形绘制
 """
+
 from file_define import FileReader, TextFileReader, JsonFileReader
 from data_define import Record
 from pyecharts.charts import Bar
-from pyecharts.options import *
+from pyecharts.options import TitleOpts, LabelOpts, InitOpts
 from pyecharts.globals import ThemeType
 
 text_file_reader = TextFileReader("D:/2011年1月销售数据.txt")
@@ -34,11 +35,10 @@ for record in all_data:
 # 可视化图表开发
 bar = Bar(init_opts=InitOpts(theme=ThemeType.LIGHT))
 
-bar.add_xaxis(list(data_dict.keys()))       # 添加x轴的数据
-bar.add_yaxis("销售额", list(data_dict.values()), label_opts=LabelOpts(is_show=False))      # 添加了y轴数据
-bar.set_global_opts(
-    title_opts=TitleOpts(title="每日销售额")
-)
+bar.add_xaxis(list(data_dict.keys()))  # 添加x轴的数据
+bar.add_yaxis(
+    "销售额", list(data_dict.values()), label_opts=LabelOpts(is_show=False)
+)  # 添加了y轴数据
+bar.set_global_opts(title_opts=TitleOpts(title="每日销售额"))
 
 bar.render("每日销售额柱状图.html")
-

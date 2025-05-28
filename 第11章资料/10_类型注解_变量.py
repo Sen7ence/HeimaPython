@@ -35,6 +35,7 @@ def func():
 
 
 var_3 = func()  # type: int
+
 # 类型注解的限制
 var_4: int = "itheima"
 var_5: str = 123
