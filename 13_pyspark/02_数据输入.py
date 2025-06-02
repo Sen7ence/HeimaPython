@@ -1,6 +1,7 @@
 """
 演示通过PySpark代码加载数据，即数据输入
 """
+
 from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local[*]").setAppName("test_spark")
@@ -21,7 +22,7 @@ sc = SparkContext(conf=conf)
 # print(rdd5.collect())
 
 # 用过textFile方法，读取文件数据加载到Spark内，成为RDD对象
-rdd = sc.textFile("D:/hello.txt")
+rdd = sc.textFile(r"13_pyspark\hello.txt")
 print(rdd.collect())
 rdd.map()
 sc.stop()
