@@ -32,4 +32,4 @@ map.set_global_opts(
 )
 
 # 绘图
-map.render()
+map.render(r"10_可视化案例\render.html")

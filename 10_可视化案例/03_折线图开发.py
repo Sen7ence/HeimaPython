@@ -8,21 +8,21 @@ from pyecharts.options import TitleOpts, LabelOpts
 
 # 处理数据
 f_us = open(
-    r"C:\Users\asus\Desktop\PythonLearning\HeimaPython\第10章资料\折线图数据\美国.txt",
+    r"10_可视化案例\折线图数据\美国.txt",
     "r",
     encoding="UTF-8",
 )
 us_data = f_us.read()  # 美国的全部内容
 
 f_jp = open(
-    r"C:\Users\asus\Desktop\PythonLearning\HeimaPython\第10章资料\折线图数据\日本.txt",
+    r"10_可视化案例/折线图数据/日本.txt",
     "r",
     encoding="UTF-8",
 )
 jp_data = f_jp.read()  # 日本的全部内容
 
 f_in = open(
-    r"C:\Users\asus\Desktop\PythonLearning\HeimaPython\第10章资料\折线图数据\印度.txt",
+    r"10_可视化案例\折线图数据\印度.txt",
     "r",
     encoding="UTF-8",
 )
@@ -82,7 +82,7 @@ line.set_global_opts(
 )
 
 # 调用render方法，生成图表
-line.render()
+line.render(r"10_可视化案例\2020年美日印三国确诊人数对比折线图.html")
 # 关闭文件对象
 f_us.close()
 f_jp.close()

@@ -8,7 +8,7 @@ from pyecharts.options import *
 
 # 读取数据文件
 f = open(
-    r"C:\Users\asus\Desktop\PythonLearning\HeimaPython\第10章资料\地图数据\疫情.txt",
+    r"10_可视化案例\地图数据\疫情.txt",
     "r",
     encoding="UTF-8",
 )
@@ -48,4 +48,4 @@ map.set_global_opts(
     ),
 )
 # 绘图
-map.render("全国疫情地图.html")
+map.render(r"10_可视化案例\全国疫情地图.html")

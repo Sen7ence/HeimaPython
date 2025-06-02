@@ -1,6 +1,7 @@
 """
 演示带有时间线的柱状图开发
 """
+
 from pyecharts.charts import Bar, Timeline
 from pyecharts.options import LabelOpts
 from pyecharts.globals import ThemeType
@@ -29,12 +30,8 @@ timeline.add(bar3, "点3")
 
 # 自动播放设置
 timeline.add_schema(
-    play_interval=1000,
-    is_timeline_show=True,
-    is_auto_play=True,
-    is_loop_play=True
+    play_interval=1000, is_timeline_show=True, is_auto_play=True, is_loop_play=True
 )
 
 # 绘图是用时间线对象绘图，而不是bar对象了
-timeline.render("基础时间线柱状图.html")
-
+timeline.render(r"10_可视化案例\基础时间线柱状图.html")

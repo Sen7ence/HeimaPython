@@ -8,7 +8,7 @@ from pyecharts.globals import ThemeType
 
 # 读取数据
 f = open(
-    r"HeimaPython\第10章资料\动态柱状图数据\1960-2019全球GDP数据.csv",
+    r"10_可视化案例\动态柱状图数据\1960-2019全球GDP数据.csv",
     "r",
     encoding="GB2312",
 )
@@ -73,6 +73,4 @@ timeline.add_schema(
     play_interval=1000, is_timeline_show=True, is_auto_play=True, is_loop_play=False
 )
 # 绘图
-timeline.render(
-    r"c:\Users\asus\Desktop\PythonLearning\HeimaPython\第10章资料\1960-2019全球GDP前8国家.html"
-)
+timeline.render(r"10_可视化案例\1960-2019全球GDP前8国家.html")
